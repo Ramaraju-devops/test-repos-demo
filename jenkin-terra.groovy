@@ -10,11 +10,11 @@ pipeline {
     }
 
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         git 'https://github.com/Ramaraju-devops/test-repos-demo.git'
-        //     }
-        // }
+        stage('Checkout') {
+            steps {
+                git checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'd4c79c4f-4624-4fdb-9eef-ed30370e7d07', url: 'https://github.com/Ramaraju-devops/test-repos-demo']])
+            }
+        }
 
         stage('Terraform Init') {
             steps {
