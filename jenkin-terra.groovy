@@ -18,13 +18,17 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                sh 
+                cd RG-Creation
+                'terraform init'
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan -out=tfplan'
+                sh 
+                cd RG-Creation
+                'terraform plan -out=tfplan'
             }
         }
 
