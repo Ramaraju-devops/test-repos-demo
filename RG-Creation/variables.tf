@@ -3,7 +3,7 @@
 variable "rgname" {
   type = string
   description = "This variable defines the Resource Group"
-  default = "dem-ci-tf-rg-01"
+  default = "test-github-jenkin-rg"
 }
 
 # Azure Location
