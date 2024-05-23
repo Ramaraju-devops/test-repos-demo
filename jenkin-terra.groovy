@@ -18,9 +18,8 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 
-                cd RG-Creation
-                'terraform init'
+                sh '''cd RG-Creation
+                    terraform init'''
             }
         }
 
