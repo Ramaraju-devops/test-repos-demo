@@ -25,15 +25,15 @@ pipeline {
 
         stage('Terraform Plan') {
             steps {
-                sh 
-                cd RG-Creation
-                'terraform plan -out=tfplan'
+                sh '''cd RG-Creation
+                    terraform plan -out=tfplan'''
             }
         }
 
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply tfplan'
+                sh '''cd RG-Creation
+                    terraform apply tfplan'''
             }
         }
     }
