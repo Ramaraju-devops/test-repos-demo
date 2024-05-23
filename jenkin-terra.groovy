@@ -10,11 +10,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Ramaraju-devops/test-repos-demo.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git 'https://github.com/Ramaraju-devops/test-repos-demo.git'
+        //     }
+        // }
 
         stage('Terraform Init') {
             steps {
