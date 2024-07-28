@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "demo_rg" {
 
 
 resource "azurerm_resource_group" "demo_rg1" {
-  name =   var.rgname
+  name =   var.rgname1
   location = var.location
 
   tags= {
