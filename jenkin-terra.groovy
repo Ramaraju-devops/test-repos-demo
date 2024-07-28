@@ -42,8 +42,6 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh '''pwd
-                    cd ..
-                    pwd
                     cd RG-Creation
                     terraform init'''
             }
@@ -51,7 +49,7 @@ pipeline {
 
         stage('Terraform Plan') {
             steps {
-                sh '''cd ../RG-Creation
+                sh '''cd RG-Creation
                     terraform plan -out=tfplan'''
             }
         }
@@ -59,7 +57,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 sh '''pwd
-                    cd ../RG-Creation
+                    cd RG-Creation
                     terraform apply tfplan'''
             }
         }
