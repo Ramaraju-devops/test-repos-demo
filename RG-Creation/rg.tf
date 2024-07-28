@@ -12,3 +12,18 @@ resource "azurerm_resource_group" "demo_rg" {
 
   }
 }
+
+
+resource "azurerm_resource_group" "demo_rg1" {
+  name =   var.rgname
+  location = var.location
+
+  tags= {
+     
+      "Environment"   = "POC"
+      "Owner"         = "Ramaraju"
+      "Owner_Email"   = "ramaraju@gmail.com"
+      "IteraplanID"   = "12345678"
+
+  }
+}
