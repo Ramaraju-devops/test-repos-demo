@@ -43,6 +43,7 @@ pipeline {
             steps {
                 sh '''pwd
                     cd ..
+                    pwd
                     cd RG-Creation
                     terraform init'''
             }
