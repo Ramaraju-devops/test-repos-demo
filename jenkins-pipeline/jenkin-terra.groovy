@@ -42,7 +42,8 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh '''pwd
-                    cd ../RG-Creation
+                    cd ..
+                    cd RG-Creation
                     terraform init'''
             }
         }
