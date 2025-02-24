@@ -1,6 +1,6 @@
 # Terraform Resource to Create Azure Resource Group with Input Variables defined in variables.tf
-resource "azurerm_resource_group" "demo_rg" {
-  name =   var.rgname
+resource "azurerm_resource_group" "demo_rg1" {
+  name =   var.rgname1
   location = var.location
 
   tags= {
@@ -14,8 +14,8 @@ resource "azurerm_resource_group" "demo_rg" {
 }
 
 
-resource "azurerm_resource_group" "demo_rg1" {
-  name =   var.rgname1
+resource "azurerm_resource_group" "demo_rg2" {
+  name =   var.rgname2
   location = var.location
 
   tags= {
