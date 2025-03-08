@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
 
     environment {
@@ -9,18 +9,12 @@ pipeline{
         stage('Checkout') {
             steps {
                 script {
-                        url: 'https://github.com/Ramaraju-devops/test-repos-demo.git' 
                         git branch: 'master',
-                        credentialsId: 'Github-Auth',
-                        
+                            credentialsId: 'Github-Auth',
+                            url: 'https://github.com/Ramaraju-devops/test-repos-demo.git'
                 }
             }
-        // stage('terraform install')
-        //    steps {
-        //        sh '''wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-        //              echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-        //              sudo apt update && sudo apt install terraform'''
-        //    }
+
         }
         stage('Terraform INIT') {
                 steps {
@@ -53,13 +47,7 @@ pipeline{
                     }
             }
         }
-}
-
-
-
-
-
-
+    }
 
 
 }
