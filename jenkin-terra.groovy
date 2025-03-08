@@ -1,24 +1,24 @@
 pipeline {
     agent any
 
-    environment {
-        AZURE_CREDENTIALS = credentials('AzureServicePrincipal2')
-        ARM_CLIENT_ID = credentials('azure-client-id')
-        ARM_CLIENT_SECRET = credentials('azure-client-secret')
-        ARM_SUBSCRIPTION_ID = credentials('azure-subscription-id')
-        ARM_TENANT_ID = credentials('azure-tenant-id')
-    }
+    // environment {
+    //     AZURE_CREDENTIALS = credentials('AzureServicePrincipal2')
+    //     ARM_CLIENT_ID = credentials('azure-client-id')
+    //     ARM_CLIENT_SECRET = credentials('azure-client-secret')
+    //     ARM_SUBSCRIPTION_ID = credentials('azure-subscription-id')
+    //     ARM_TENANT_ID = credentials('azure-tenant-id')
+    // }
 
     stages {
-        stage('Checkout') {
-            steps {
-               script {
-                    git branch: 'master',
-                        credentialsId: 'Github-connection',
-                        url: 'https://github.com/Ramaraju-devops/test-repos-demo' 
-               }
-        }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //        script {
+        //             git branch: 'master',
+        //                 credentialsId: 'Github-connection',
+        //                 url: 'https://github.com/Ramaraju-devops/test-repos-demo' 
+        //        }
+        // }
+        // }
         
         // stage('az login'){
         //     steps{
@@ -43,24 +43,24 @@ pipeline {
             steps {
                 sh '''pwd
                     cd RG-Creation
-                    terraform init'''
+                    '''
             }
         }
 
-        stage('Terraform Plan') {
-            steps {
-                sh '''cd RG-Creation
-                    terraform plan -out=tfplan'''
-            }
-        }
+        // stage('Terraform Plan') {
+        //     steps {
+        //         sh '''cd RG-Creation
+        //             terraform plan -out=tfplan'''
+        //     }
+        // }
 
-        stage('Terraform Apply') {
-            steps {
-                sh '''pwd
-                    cd RG-Creation
-                    terraform apply tfplan'''
-            }
-        }
+        // stage('Terraform Apply') {
+        //     steps {
+        //         sh '''pwd
+        //             cd RG-Creation
+        //             terraform apply tfplan'''
+        //     }
+        // }
     }
 
     post {
