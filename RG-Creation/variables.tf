@@ -1,9 +1,9 @@
 
 # Azure Resource Group Name
-variable "rgname" {
+variable "jenrgname" {
   type = string
   description = "This variable defines the Resource Group"
-  default = "demogithubjenkinsrg1"
+  default = "tstjenkdeprg01"
 }
 
 # Azure Location
