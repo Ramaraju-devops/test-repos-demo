@@ -43,7 +43,7 @@ pipeline {
             steps {
                 sh '''pwd
                     cd RG-Creation
-                    '''
+                    ls -l'''
             }
         }
 
