@@ -13,16 +13,15 @@ resource "azurerm_resource_group" "jenkin-demo-mar25-rg1" {
   }
 }
 
-resource "azurerm_resource_group" "jenkin-demo-mar25-rg1" {
+resource "azurerm_resource_group" "jenkin-demo-mar25-rg2" {
   name =   var.jenrgname2
   location = var.location
 
   tags= {
      
       "Environment"   = "POC"
-      "Owner"         = "Ramaraju"
-      "Owner_Email"   = "ramaraju@gmail.com"
-      "IteraplanID"   = "12345678"
+      "Owner"         = "jenkins pipeline"
+
 
   }
 }
