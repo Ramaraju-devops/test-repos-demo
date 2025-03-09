@@ -5,6 +5,11 @@ pipeline {
         AZURE_CREDENTIALS = credentials('AZURE_CONNECTION')
     }
 
+    parameters {
+     //   string(name: 'TerraformApply', defaultValue: 'do not apply', description: 'this is for apply condition')
+        booleanParam(name: 'TerraformApply', defaultValue: false, description: 'this is for apply condition')
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -43,6 +48,18 @@ pipeline {
                             sh '''
                                 cd RG-Creation
                                 terraform plan
+                                '''
+                    }
+            }
+        }
+        stage('Terraform Apply') {
+            //when { expression { params.TerraformApply == 'apply' } }
+            when { expression { params.TerraformApply == true } }
+                steps {
+                    script {
+                            sh '''
+                                cd RG-Creation
+                                terraform apply -auto-approve
                                 '''
                     }
             }
