@@ -13,6 +13,7 @@ terraform {
 # 2. Terraform Provider Block for AzureRM
 provider "azurerm" {
   features {}
-   subscription_id = "13917d14-a7e0-4435-8830-403a28246744" 
+   subscription_id = "13917d14-a7e0-4435-8830-403a28246744"
+   tenant_id = "84f96efe-d3ca-47a5-bc04-8d455c1e0e15"
 }
 
