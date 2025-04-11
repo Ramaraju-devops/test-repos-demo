@@ -2,8 +2,6 @@ pipeline {
     agent any
 
     environment {
-        BRANCH = 'master'
-        REPO = 'https://github.com/Ramaraju-devops/test-repos-demo.git'
 
         ARM_ACCESS_KEY = credentials('AZURE_STORAGE_ACCOUNT_KEY')
         ARM_CLIENT_ID = credentials('AZURE_CLIENT_ID')
@@ -18,15 +16,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Source') {
-            steps {
-                script {
-                    git branch: "$BRANCH",
-                        credentialsId: 'Github-connection',
-                        url: "$REPO"
-                }
-            }
-        }
 
         stage('Terraform INIT') {
             steps {
