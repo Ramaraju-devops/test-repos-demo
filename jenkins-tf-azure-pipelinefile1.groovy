@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-
         ARM_ACCESS_KEY = credentials('AZURE_STORAGE_ACCOUNT_KEY')
         ARM_CLIENT_ID = credentials('AZURE_CLIENT_ID')
         ARM_CLIENT_SECRET = credentials('AZURE_CLIENT_SECRET')
@@ -16,7 +15,6 @@ pipeline {
     }
 
     stages {
-
         stage('Terraform INIT') {
             steps {
                 script {
@@ -54,7 +52,7 @@ pipeline {
                     script {
                         sh '''
                             cd RG-Creation1
-                            terraform apply
+                            terraform apply --auto-approve
                         '''
                     }
                 }
