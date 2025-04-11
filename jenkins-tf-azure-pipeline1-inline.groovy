@@ -54,16 +54,21 @@ pipeline {
             }
         }
 
-    // stage('Terraform - apply') {
-    //   steps {
-    //       sh 'terraform apply -auto-approve'
-    //   }
-    // }
+        stage('Terraform - apply') {
+            steps {
+                script {
+                    sh '''
+                        cd RG-Creation1
+                        terraform apply
+            '''
+                }
+            }
+        }
     }
 
     post {
         always {
             cleanWs()
         }
-    }\
+    }
 } // pipeline
