@@ -7,13 +7,7 @@ terraform {
       version = "4.19.0"
     }
   }
-  # backend "azurerm" {
-  #   resource_group_name  = "github-tfstates-rg"
-  #   storage_account_name = "stracctgithubterr01"
-  #   container_name       = "febcontainer"
-  #   key                 = "febapp.tfstate"
-    
-  # }
+  backend "azurerm" {}
 }
 
 # 2. Terraform Provider Block for AzureRM
